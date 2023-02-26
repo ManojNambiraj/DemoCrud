@@ -19,7 +19,7 @@ function EditUser() {
 
   useEffect(() => {
     getData();
-  }, []);
+  });
 
   const getData = async () => {
     let user = await axios.get(
@@ -42,7 +42,7 @@ function EditUser() {
       }
     );
     alert("User Updated Successfully");
-    navigate("/userlist")
+    navigate("/userlist");
   };
 
   return (
