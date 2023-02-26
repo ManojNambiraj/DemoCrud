@@ -17,10 +17,6 @@ function EditUser() {
     setFormData({ ...FormData, [name]: value });
   };
 
-  useEffect(() => {
-    getData();
-  });
-
   const getData = async () => {
     let user = await axios.get(
       `https://63f979b3473885d837ce478c.mockapi.io/user/${params.id}`
@@ -44,6 +40,10 @@ function EditUser() {
     alert("User Updated Successfully");
     navigate("/userlist");
   };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <div className="parent">
